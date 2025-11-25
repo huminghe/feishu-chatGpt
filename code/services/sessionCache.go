@@ -3,6 +3,7 @@ package services
 import (
 	"start-feishubot/services/openai"
 	"time"
+	"github.com/patrickmn/go-cache"
 )
 
 type SessionMode string
