@@ -3,8 +3,6 @@ package services
 import (
 	"start-feishubot/services/openai"
 	"time"
-
-	"github.com/patrickmn/go-cache"
 )
 
 type SessionMode string
@@ -141,7 +139,7 @@ func (s *SessionService) GetMsg(sessionId string) (msg []openai.Messages) {
 }
 
 func (s *SessionService) SetMsg(sessionId string, msg []openai.Messages) {
-	maxLength := 4096
+	maxLength := 40960
 	maxCacheTime := time.Hour * 12
 
 	//限制对话上下文长度
